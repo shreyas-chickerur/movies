@@ -9,3 +9,13 @@ body {
     background-image: linear-gradient(to bottom right, goldenrod, black);
 }
 
+.container {
+    margin:30px;
+    border-radius: 25px;
+  background:#080a1c;
+}
+
+.container-content {
+    padding: 20px;
+}
+

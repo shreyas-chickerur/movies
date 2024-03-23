@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/global.css') }}">
+{% extends 'loggedin.html' %}
+
+{% block head %}
     <title>Home Page</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/preferences.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-content">
+        <div class="content-row">
+            <!-- Picture -->
+            <img src="{{ url_for('static', filename='images/titanic.jpeg') }}" class="image"/>
+
+            <!-- Description -->
+            <div class="content-description"> {{movie_description}}</div>
+        </div>
+        <div class="content-row">
+            <!-- Picture -->
+            <img src="{{ url_for('static', filename='images/leo.jpg') }}" class="image"/>
+
+            <!-- Description -->
+            <div class="content-description"> {{actor_description}}</div>
+        </div>
+        <div class="content-row">
+            <!-- Picture -->
+            <img src="{{ url_for('static', filename='images/yoda.webp') }}" class="image"/>
+
+            <!-- Description -->
+            <div class="content-description"> {{genre_description}}</div>
+        </div>
+        
+    </div>
+{% endblock %}
