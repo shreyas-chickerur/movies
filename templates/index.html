@@ -12,21 +12,41 @@
             <img src="{{ url_for('static', filename='images/titanic.jpeg') }}" class="image"/>
 
             <!-- Description -->
-            <div class="content-description"> {{movie_description}}</div>
+            <div class="content-description"> 
+                {{movie_description}}
+                <form method="POST">
+                    <input type="text" id="fMovie" name="fMovie" placeholder="Enter your favorite movie">
+                    <input type="submit">
+                </form>
+     
+            </div>
+            
         </div>
         <div class="content-row">
             <!-- Picture -->
             <img src="{{ url_for('static', filename='images/leo.jpg') }}" class="image"/>
 
             <!-- Description -->
-            <div class="content-description"> {{actor_description}}</div>
+            <div class="content-description"> 
+                {{actor_description}}
+                <form method="POST">
+                    <input type="text" id="fActor" name="fActor" placeholder="Enter your favorite actor">
+                    <input type="submit">
+                </form>
+            </div>
         </div>
         <div class="content-row">
             <!-- Picture -->
             <img src="{{ url_for('static', filename='images/yoda.webp') }}" class="image"/>
 
             <!-- Description -->
-            <div class="content-description"> {{genre_description}}</div>
+            <div class="content-description"> 
+                {{genre_description}}
+                <form method="POST">
+                    <input type="text" id="fGenre" name="fGenre" placeholder="Enter your favorite genre">
+                    <input type="submit">
+                </form>
+            </div>
         </div>
         
     </div>
