@@ -9,14 +9,24 @@
     <div class="container-content">
         <div class="content-row">
             <!-- Picture -->
-            <img src="{{ url_for('static', filename='images/titanic.jpeg') }}" class="image"/>
+            <!-- <img src="{{ url_for('static', filename='images/titanic.jpeg') }}" class="image"/> -->
+            <img class="placeholder"/>
 
             <!-- Description -->
             <div class="content-description"> 
                 {{movie_description}}
                 <form method="POST">
-                    <input type="text" id="fMovie" name="fMovie" placeholder="Enter your favorite movie">
-                    <input type="submit">
+                    <label for="fMovie">Enter your favorite movie:</label>
+                    <select name="fMovieDrop" id = "fMovieDrop"> 
+                        <option value="none" selected disabled hidden>Select an Option</option> 
+                        {% for movie in movie_names %}
+                            <option value="{{movie}}">{{movie_names[movie]}}</option>"
+                        {% endfor %}
+                    </select>
+                    <input type="text" id="fMovie" name="fMovie" placeholder="Non-listed movie name">
+                    <div style="text-align: center;">
+                        <input type="submit">
+                    </div>
                 </form>
      
             </div>
@@ -24,30 +34,51 @@
         </div>
         <div class="content-row">
             <!-- Picture -->
-            <img src="{{ url_for('static', filename='images/leo.jpg') }}" class="image"/>
+            <!-- <img src="{{ url_for('static', filename='images/leo.jpg') }}" class="image"/> -->
+            <img class="placeholder"/>
 
             <!-- Description -->
             <div class="content-description"> 
                 {{actor_description}}
                 <form method="POST">
-                    <input type="text" id="fActor" name="fActor" placeholder="Enter your favorite actor">
-                    <input type="submit">
+                    <label for="fActor">Enter your favorite actor:</label>
+                    <select name="fActorDrop" id = "fActorDrop"> 
+                        <option value="none" selected disabled hidden>Select an Option</option> 
+                        {% for actor in actor_names %}
+                            <option value="{{actor}}">{{actor_names[actor]}}</option>"
+                        {% endfor %}
+                    </select>
+                    <input type="text" id="fActor" name="fActor" placeholder="Non-listed actor name">
+                    <div style="text-align: center;">
+                        <input type="submit">
+                    </div>
                 </form>
             </div>
         </div>
         <div class="content-row">
             <!-- Picture -->
-            <img src="{{ url_for('static', filename='images/yoda.webp') }}" class="image"/>
+            <!-- <img src="{{ url_for('static', filename='images/yoda.webp') }}" class="image"/> -->
+            <img class="placeholder"/>
 
             <!-- Description -->
             <div class="content-description"> 
                 {{genre_description}}
                 <form method="POST">
-                    <input type="text" id="fGenre" name="fGenre" placeholder="Enter your favorite genre">
-                    <input type="submit">
+                    <label for="fGenre">Enter your favorite genre:</label>
+                    <select name="fGenreDrop" id = "fGenreDrop"> 
+                        <option value="none" selected disabled hidden>Select an Option</option> 
+                        {% for genre in genre_names %}
+                            <option value="{{genre}}">{{genre_names[genre]}}</option>"
+                        {% endfor %}
+                    </select>
+                    <input type="text" id="fGenre" name="fGenre" placeholder="Non listed genre">
+                    <div style="text-align: center;">
+                        <input type="submit">
+                    </div>
                 </form>
             </div>
         </div>
+        
         
     </div>
 {% endblock %}

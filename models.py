@@ -20,6 +20,7 @@ class Movie(db.Model):
     name = db.Column(db.String(50), unique=False, nullable=False)
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
     year_released = db.Column(db.Integer, unique=False, nullable=False)
+    description = db.Column(db.String(200), unique=False, nullable=False)
 
 class Genre(db.Model):
     __tablename__ = "genre"
